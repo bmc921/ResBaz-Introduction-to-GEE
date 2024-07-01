@@ -35,7 +35,7 @@ There are several useful normalized difference indices, the most common is NDVI 
 
 ><span style="color:red"> **Step 2:** Use the normalized difference function  to calculate NBR for image_1. Type your code in below ```//// START NEW CODE BELOW ////``` </span> 
 
->[Click here to access the script](https://code.earthengine.google.com/98df3367c930d6a59c24e4ef0c904516)
+>[Click here to access the script](https://code.earthengine.google.com/a55aba0a7395b5595058e921bdc6e89e)
 
 ```Javascript
 // calculate NBR for image_1
