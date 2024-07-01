@@ -83,7 +83,7 @@ This collection contains all the level-2A data in the Sentinel-2 archive. We  ca
 
 ```Javascript
 // define sentinel-2 level 2A image collection
-var image_collection = ee.ImageCollection("COPERNICUS/S2_SR")
+var image_collection = ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
     .filterBounds(geometry)
 
 // print image_collection to console
@@ -104,7 +104,7 @@ Lets add a filter to obtain the least cloudy image in the collection so we can v
 
 ```Javascript
 // define sentinel-2 level 2A image collection 
-var image_collection = ee.ImageCollection("COPERNICUS/S2_SR")
+var image_collection = ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
     .filterBounds(geometry)
     .filterMetadata('CLOUDY_PIXEL_PERCENTAGE', "less_than", 5)
 
@@ -124,7 +124,7 @@ We can use the metadata filter to filter a collection by any of ther properties 
 
 ```Javascript
 // define sentinel-2 level 2A image collection 
-var image_collection = ee.ImageCollection("COPERNICUS/S2_SR")
+var image_collection = ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED")
     .filterBounds(geometry)
     .filterMetadata('CLOUD_COVER', "less_than", 5)
 
