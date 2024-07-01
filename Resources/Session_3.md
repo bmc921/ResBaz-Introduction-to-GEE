@@ -28,11 +28,11 @@ var myFeatureCollection = ee.FeatureCollection({
 })
 ```
 
-In the example above ```myFeatureCollection``` contains 2 features which are geometries names ```geometry_1``` & ```geometry_2```. A property called ```'class'``` and the value of the property is specified between ```{}```.  
+In the example above ```myFeatureCollection``` contains 2 features which are geometries named ```geometry_1``` & ```geometry_2```. A property called ```'class'``` and the value of the property is specified between ```{}```.  
 
 Rather than creating our own training data set we are going to ingest a shapefile that contains that information. We can ingest our own data into GEE as an Asset. 
 
-><span style="color:red"> **Step 1:** [Start by accessing the script for this session](https://code.earthengine.google.com/?scriptPath=users%2Fbcol845%2FResBaz%3ASession_3_Starter) Make sure you have downloaded and unzipped the file trainingData.zip from the resources folder in the [github repository](https://github.com/bmc921/ResBaz-Introduction-to-GEE)  
+><span style="color:red"> **Step 1:** [Start by accessing the script for this session](https://code.earthengine.google.com/9ed9f34dbe0a36edf744179c6a4ffdc4) Make sure you have downloaded and unzipped the file trainingData.zip from the resources folder in the [github repository](https://github.com/bmc921/ResBaz-Introduction-to-GEE)  
 >Navigate to the Assets tab > NEW > Shape files > SELECT and select all the files in the trainingData folder. </span>
 
 <br />
@@ -53,7 +53,7 @@ print(trainingData)
 Map.addLayer(trainingData)
 ```
 
-You'll notice that this is a Feature Collection containing point features. By looking at the metadata printed to the console there are 180 features which contain 2 properties ```ClassID``` and ```ClassNAME``` where classID is a number and className is the name of the landcover type associated with the classID. 
+You'll notice that this is a Feature Collection containing point features. By looking at the metadata printed to the console there are 180 features which contain 2 properties ```ClassID``` and ```ClassNAME``` where classID is an integer and className is the name of the landcover type associated with the classID. 
 
 <br />
 
@@ -183,7 +183,7 @@ print('Validation error matrix: ', testAccuracy);
 print('Validation overall accuracy: ', testAccuracy.accuracy());
 ```
 
-We can use the ```print()``` command to print the overall accuracy by calling ```testAccuracy.accuracy()``` which is 0.82 (2dp) or 82%. Not too bad! (Bear in mind that this using a very small sample of the original reference data. The accuracy would likely decrease where a greater sample of reference points were used).  
+We can use the ```print()``` command to print the overall accuracy by calling ```testAccuracy.accuracy()``` which is 0.82 (2dp) or 82%. Not too bad! (Bear in mind that this is using a very small sample of the original reference data. The accuracy would likely decrease where a greater sample of reference points were used).  
 
 Printing the full ```errorMatrix``` to the console provides a list for each value in ```'classID'```. The length of the list is the number of values in ```'classID'``` and each number represents a point in the feature collection that was classified as that class. For example, the list for value 1 is ```[0,8,0,0,0,0,0,0]``` meaning that all 8 reference points that had a ```classID``` value of 1 (water) were classified correctly because all 8 were under the second value in the list. If we look at the list for ```classID``` value 4 (managed_vegetation) the list reads ```[0,0,0,2,10,0,0,0]``` which means of the 12 reference points that were managed_vegetation 10 were correctly classified and 2 were classified with a ```classID``` value of 3 (residential).  
 
