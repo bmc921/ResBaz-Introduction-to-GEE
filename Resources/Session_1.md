@@ -21,7 +21,7 @@ This is the easiest way to run analysis and access the data available in GEE. Th
 
 <br />
 
-Click (here)[https://code.earthengine.google.com/1ee47f9049304d3352dc4ddbc6a76832] to acces the code editor.
+Click [here](https://code.earthengine.google.com/1ee47f9049304d3352dc4ddbc6a76832) to acces the code editor.
 
 We can search for locations and available datasets that we want to use in our analysis using the search function. Interacting with data in the map view is achieved using the inspector tool. Clicking on the location in the map view prints this information to the console.
 
